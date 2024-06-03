@@ -164,7 +164,7 @@ function esc_url($url){
     $url=str_replace("'", '&#039;', $url);
 
     if($url[0]!=='/'){
-        $_SERVER['PHP_SELF']
+       
         return '';
     }else{
         return $url;
