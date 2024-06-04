@@ -63,6 +63,7 @@ function login($email, $password, $mysqli)
                     // proteção XSS conforme imprimimos este valor
                     $user_id=preg_replace("/[^0-9]+/","",$user_id);
                     $_SESSION['user_id']=$user_id;
+                    
                     $username=preg_replace("/[^a-zA-Z0-9_\-]+/","",$username);
                     $_SESSION['username']=$username;
                     $_SESSION['login_string']= hash('sha512',$password.$user_browser);

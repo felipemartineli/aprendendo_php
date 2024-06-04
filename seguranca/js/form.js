@@ -6,7 +6,7 @@ function formhash(form, password){
     form.appendChild(p);
     p.name="p";
     p.type="hidden";
-    p.value = hex_sha512(password.values);
+    p.value = hex_sha512(password.value);
 
     //Cuidado para não deixar que a senha em texto simples não seja enviada.
     password.value="";
@@ -17,7 +17,7 @@ function formhash(form, password){
 
 function regformhash(form, uid, email, password, conf){
     //Confira se cada campo tem um valor
-
+     
     if(uid.value ==''  ||
        email.value =='' ||
        password.value=='' ||
@@ -46,17 +46,18 @@ function regformhash(form, uid, email, password, conf){
        //Pelo menos 6 caracteres
 
     var re= /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/; 
-     if (!re.test(password.values)){
+     if (!re.test(password.value)){
         alert('Passwords must contain at least one number, one lowercase and one uppercase letter. Plase try again');
         return false;
      }
 
      //Verificar se a senha e a confirmação são as mesmas
-     if(password.value !=conf.value){
+     if(password.value != conf.value){
         alert('Your password and confirmation do not match. Plase try again');
         form.password.focus();
         return false;
      }
+     
      //Crie um novo elemento de input, o qual será o campo paraa senha com hash.
      var p = document.createElement("input");
 
@@ -68,11 +69,13 @@ function regformhash(form, uid, email, password, conf){
      p.value =hex_sha512(password.value);
 
      //Cuidado para não deixar que a senha em texto simples não seja enviada.
-
+     
      password.value="";
      conf.value="";
 
      //Finalizando, envie o formulário.
      form.submit();
      return true;
+
+
 }
