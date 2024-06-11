@@ -1,5 +1,6 @@
 <?php
-Author : samueldb require_once 'header.php';
+//Author : samueldb 
+require_once 'header.php';
 ?>
 <div class="container">
     <div class="jumbotron">
@@ -7,4 +8,4 @@ Author : samueldb require_once 'header.php';
     </div>
 </div>
 <?php
-require_once 'footer.php'
+require_once 'footer.php';
