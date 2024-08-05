@@ -1,3 +1,3 @@
 <?php
-include_once 'psl-config.php'; //incluindo outro  php
-$mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+    include_once 'psl-config.php'; 
+    $mysqli = new mysqli (host, user, password, database);
